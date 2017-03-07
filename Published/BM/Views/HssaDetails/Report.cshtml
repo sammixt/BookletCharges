@@ -1,0 +1,167 @@
+﻿@model IEnumerable<AutomationOfWithdrawalBookletCharges.ViewModel.CustomerViewModel>
+<div class="row row-content-section">
+    <div class="col-md-12">
+        <div class="well form-inline col-md-12">
+            <fieldset>
+                @using (Html.BeginForm("ReportSearch", "HssaDetails", FormMethod.Post, new { id = "sendform", role = "form", @class = "col-md-12" }))
+                {
+                    <div class="form-group col-md-3">
+                        <label class="control-label">Start Date</label>
+                        <input type="text" name="SearchStartDate" class="form-control datepicker" required />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="control-label">End Date</label>
+                        <input type="text" name="SearchEndDate" class="form-control datepicker" required />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type="submit" value="Search" class="btn btn-md ubn-color-bg white-bar" />
+                    </div>
+                    <div class="clearfix"></div>
+                }
+            </fieldset>
+        </div>
+        <div id="Area"class=" form-inline col-md-12">
+            
+            <table id="example"  class="table table-bordered display">
+                    <thead >
+                    <tr>
+                        <th colspan="10"><h4 class="ubn-color text-center">@ViewBag.DisplayMessage</h4></th>
+                    </tr>
+                        <tr class="ubn-color-bg white-bar title">
+                            <th>
+                                REQUEST DATE
+                            </th>
+                            <th>
+                                CUSTOMER NAME
+                            </th>
+                            <th>
+                                ACCOUNT NUMBER
+                            </th>
+                            <th>
+                                DATE OF LAST ISSUANCE
+                            </th>
+                            <th>
+                                SERIAL NUMBER (FROM)
+                            </th>
+                            <th>
+                                SERIAL NUMBER (TO)
+                            </th>
+                            <th>
+                                SSAID
+                            </th>
+                            <th>
+                                AUTHORIZERS ID
+                            </th>
+                            <th>
+                                TIME OF REQUEST MAKING
+                            </th>
+                            <th>
+                                TIME OF REQUEST AUHORIZATION
+                            </th>
+                        </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RequestCreationDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AccountName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AccountNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateOfLastIssue)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SerialNoStart)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SerialNoEnd)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SsaId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HssaId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RequestCreationTime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RequestAuthorizationTime)
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-12 print">
+            
+        </div>
+    </div>
+</div>
+
+<style>
+    .body-content {
+        padding-left: 1%;
+        padding-right: 1%;
+        margin-top: -3%;
+        width: 100%;
+    }
+    .print{
+        margin-bottom:3%;
+    }
+    .title > th {
+        font-size: 10px;
+        text-align: center;
+    }
+    tbody tr td{
+        font-size:10px;
+        text-align:center;
+    }
+
+</style>
+<link href="~/DataTable/datatables.min.css" rel="stylesheet" />
+<link href="~/DataTable/Buttons-1.2.4/css/buttons.dataTables.min.css" rel="stylesheet" />
+@section Script{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () { // will trigger when the document is ready
+                $('.datepicker').datepicker(); //Initialise any date pickers
+            });
+        })
+    </script>
+    <script src="~/DataTable/datatables.min.js"></script>
+    <script src="~/DataTable/Buttons-1.2.4/js/dataTables.buttons.min.js"></script>
+    <script src="~/DataTable/pdfmake-0.1.18/build/pdfmake.js"></script>
+    <script src="~/DataTable/pdfmake-0.1.18/build/vfs_fonts.js"></script>
+    <script src="~/DataTable/Buttons-1.2.4/js/buttons.html5.min.js"></script>
+    <script src="~/DataTable/Buttons-1.2.4/js/buttons.flash.min.js"></script>
+    <script src="~/DataTable/JSZip-2.5.0/jszip.js"></script>
+    <script src="~/DataTable/Buttons-1.2.4/js/buttons.print.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+            {
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                pageSize: 'LEGAL',
+                className:'ubn-color-bg'
+            }
+                ]
+            });
+        });
+    </script>
+}
+
+
+
+
+

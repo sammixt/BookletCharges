@@ -1,0 +1,69 @@
+﻿@model IEnumerable<AutomationOfWithdrawalBookletCharges.ViewModel.CustomerViewModel>
+<div class="row row-content-section">
+    <div class="col-md-12">
+        <div class=" form-inline col-md-10 col-md-offset-1">
+            <h4 class="ubn-color">@ViewBag.DisplayMessage</h4>
+            <table class="table table-bordered table-responsive ">
+                <tr class="ubn-color-bg white-bar">
+                    <th>
+                        @Html.DisplayNameFor(model => model.AccountName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AccountNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RequestCreationDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RequestCreationTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SsaName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AccountName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AccountNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RequestCreationDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RequestCreationTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SsaName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @ShowDiffLink(item.Status, item.RequestId)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+
+@helper ShowDiffLink(string status, string link)
+{
+    
+    @Html.ActionLink("View", "DisplayState", "AccountCheck", new { id = link }, new { @class = "btn btn-sm ubn-color-bg white-bar" })
+    
+   
+}
+
+

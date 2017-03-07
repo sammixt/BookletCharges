@@ -1,0 +1,111 @@
+﻿@model AutomationOfWithdrawalBookletCharges.ViewModel.CustomerViewModel
+
+<div class="row row-content-section">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="well form-horizontal col-md-12">
+            
+                    <h3 class="text-center ubn-color">Withdrawal Booklet Request Details</h3>
+                    <div class="col-md-6 form-horizontal">
+                        <table class="table table-striped table-responsive">
+                            <tr>
+                                <td><strong>@Html.DisplayNameFor(model => model.AccountName)</strong></td>
+                                <td><strong>@Html.DisplayFor(model => model.AccountName)</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>@Html.DisplayNameFor(model => model.AccountNumber)</strong></td>
+                                <td><strong>@Html.DisplayFor(model => model.AccountNumber)</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>@Html.DisplayNameFor(model => model.AccountBalance) on Request Date</strong></td>
+                                <td><strong>@Html.DisplayFor(model => model.AccountBalance)</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>@Html.DisplayNameFor(model => model.PhoneNo)</strong></td>
+                                <td><strong>@Html.DisplayFor(model => model.PhoneNo)</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>@Html.DisplayNameFor(model => model.DateOfLastIssue)</strong></td>
+                                <td>@nullDateCheck(Model.DateOfLastIssue)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enter Booklet Serial Number (First Number)</strong></td>
+                                <td><strong>@Html.DisplayFor(model => model.SerialNoStart) -- @Html.DisplayFor(model => model.SerialNoEnd)</strong></td>
+                            </tr>
+                        </table>
+                 </div> 
+                <div class="col-md-6 form-horizontal">
+                    <table class="table table-striped table-responsive">
+                        <tr>
+                            <td><strong>Request Date</strong></td>
+                            <td>
+                                <strong>
+                                    @Html.DisplayFor(model => model.RequestCreationDate)
+                                    @Html.DisplayFor(model => model.RequestCreationTime)
+                                </strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><strong>Request Authorization Date</strong></strong></td>
+                            <td>
+                                <strong>
+                                    @Truncate( Model.RequestAuthorizationDate, 10)
+                                    @Html.DisplayFor(model => model.RequestAuthorizationTime)
+                                </strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Request Status</strong></td>
+                            <td>
+                                <strong>
+                                    @Html.DisplayFor(model => model.Status)
+                                </strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reason for Declining Request</strong></td>
+                            <td>
+                                <p>
+                                    @Html.DisplayFor(model => model.Comment)
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+            </div>
+            <div class="clearfix"></div>          
+        </div>
+        <div class="form-group col-md-4 col-md-offset-4">
+            <a class="btn btn-md ubn-color-bg white-bar col-md-offset-4 col-md-4" href="@Url.Action("Index","HssaDetails")">Back to List</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+</div>
+<style>
+    tr td:first-child {
+        color: #00adef;
+    }
+</style>
+@helper Truncate(string source, int length)
+{
+    if (source.Length > length)
+    {
+        source = source.Substring(0, length);
+    }
+     <span>@source</span>
+}
+
+@helper nullDateCheck(DateTime? source)
+{
+    var outpt = source.Value.ToShortDateString();
+    if (outpt == "01/01/0001")
+    {
+      <span></span>  
+    }
+    else
+    {
+        <strong>@Html.DisplayFor(model => model.DateOfLastIssue)</strong>
+    }
+}
+
+
+

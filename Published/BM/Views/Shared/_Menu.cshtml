@@ -1,0 +1,92 @@
+﻿@using System.Security.Claims;
+
+@if (Request.IsAuthenticated)
+{
+    var identity = (ClaimsIdentity)User.Identity;
+    var name = identity.FindFirst(ClaimTypes.GivenName).Value;
+    var userRole = identity.FindFirst(ClaimTypes.Role).Value;
+    string urlActio = "";
+    string urlCon = "";
+    switch(userRole)
+    {
+        case "Administrator":  urlActio = "LogOff";  urlCon = "Admin";
+            break;
+        case "Admin": urlActio = "LogOff";  urlCon = "Admin";
+            break;
+        case "Checker": urlActio = "LogOff"; urlCon = "HssaChecker";
+            break;
+        default:  urlActio = "LogOff";  urlCon = "Home";
+            break;
+    }
+    using (Html.BeginForm(urlActio, urlCon, FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+
+<ul class="nav navbar-nav">
+    @if (User.IsInRole("Admin") || User.IsInRole("Administrator"))
+    {
+    <li>
+        <a href="@Url.Action("Index", "AdminDetails")" class="white-bar"><span  class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;Home</a>
+    </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle white-bar" data-toggle="dropdown"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;Audit Log <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="@Url.Action("LoginLog", "AuditLog")"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;Login/Logout</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("RequestLog", "AuditLog")"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;Booklet request initiated</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("PostingLog", "AuditLog")"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;Posting Transactions</a>
+                </li>
+            </ul>
+        </li>
+    }
+    @if (User.IsInRole("Checker"))
+    {
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle white-bar" data-toggle="dropdown"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;Reports <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="@Url.Action("Report", "HssaDetails")"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;Total Issued Booklets</a>
+                </li>
+               
+            </ul>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","HssaDetails")" class="white-bar">Pending Request <span id="count" class="label label-danger"></span></a>
+        </li>
+    }
+    @if (User.IsInRole("Maker"))
+    {
+    <li>
+        <a href="@Url.Action("Index", "AccountCheck")" class="white-bar"><span  class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;Home</a>
+    </li>
+    <li class="dropdown">
+            <a href="#" class="dropdown-toggle white-bar" data-toggle="dropdown"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;Daily Request <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="@Url.Action("RequestList", "AccountCheck", new { id = "PENDING"})"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;Pending</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("RequestList", "AccountCheck", new { id = "APPROVED"})"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;Approved</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("RequestList", "AccountCheck", new { id = "DECLINED"})"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;Declined</a>
+                </li>
+            </ul>
+        </li>
+    }
+</ul>
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="#" class="white-bar"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;@name</a>
+        </li>
+        <li>
+            <a href="javascript:document.getElementById('logoutForm').submit()" class="white-bar"><span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;&nbsp;Log off</a>
+        </li>
+    </ul>
+    }
+}

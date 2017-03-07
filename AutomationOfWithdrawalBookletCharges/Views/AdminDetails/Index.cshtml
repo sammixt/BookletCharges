@@ -1,0 +1,171 @@
+﻿@model IEnumerable<AutomationOfWithdrawalBookletCharges.ViewModel.UserProfileViewModel>
+
+@if (ViewBag.AddUserSuccessMessage != null)
+{
+    <div class="alert alert-success">
+        <p><b>@ViewBag.AddUserSuccessMessage</b></p>
+    </div> 
+}
+<ul class="list list-inline">
+   <li> @Html.ActionLink("Add User", "Create", null, new { @class = "btn btn-sm ubn-color-bg white-bar" })</li>
+    <li> <a href="#" class="btn btn-sm ubn-color-bg white-bar" data-toggle="modal" data-target="#pickUpLocation" data-dismiss="modal">Search By Branch</a></li>
+</ul>
+<table class="table table-bordered table-responsive">
+    <tr class="ubn-color-bg white-bar">
+        
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BranchCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Branch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Roles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BranchCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Branch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Roles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @*<a href="@Url.Action("Edit", "Admin", new { /* id=item.EmployeeNumber */ })" class="btn btn-warning">
+               <i class="fa fa-edit"></i> 
+            </a>
+            <a href="@Url.Action("Delete", "Admin", new { /* id=item.EmployeeNumber */ })" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+            </a>*@
+            @Html.ActionLink("Edit", "Edit", new {  id=item.EmployeeNumber  }) |
+            @if (item.Status == "ENABLED") { 
+            @Html.ActionLink("Disable", "Disable", new { id = item.EmployeeNumber }, new { @class = "text-danger" })
+            }
+            else { 
+            @Html.ActionLink("Enable", "Enable", new { id = item.EmployeeNumber }, new { @class = "text-success" })
+            }
+        </td>
+    </tr>
+}
+
+</table>
+<!--Pick up Branch Modal -->
+<div class="modal fade" id="pickUpLocation" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-center"><strong>Preferred Pick Up Location</strong></h4>
+            </div>
+            @using (Html.BeginForm("Index", "AdminDetails", FormMethod.Post, new { @class = "" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label class="control-label">Search by branch</label>
+                        <input type="text" list="branches" id="branch" class="form-control" />
+                        <datalist id="branches">
+                            <option value="All" data-branch="1" />
+                            @foreach (var branch in ViewBag.Branches)
+                            {
+                                <option value="@branch.BranchLocationName" data-branch="@branch.BranchId" />
+                            }
+                        </datalist>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-bottom:3%">
+                    <button id="continue" type="button" class="btn btn-primary">Continue</button>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+@section Script {
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('.alert-success').css('display','none')
+        }, 5000);
+    })
+
+    $(function () {
+
+        $("#continue").click(function () {
+            var val = $('#branch').val()
+            var branch = $('#branches option').filter(function () {
+                return this.value == val;
+            }).data('branch');
+            var msg = branch ? branch : '1';
+            window.location.href = "/AdminDetails/Index?branchcode="+msg;
+            //if (msg != 'No Match') {
+            //    var BranchViewModel = {
+            //        BranchLocationName: msg
+            //    }
+            //    $.ajax({
+            //        url: '/Cart/PickUpBranch',
+            //        contentType: 'application/json; charset=utf-8',
+            //        type: 'POST',
+            //        data: JSON.stringify(BranchViewModel)
+
+            //    })
+            //.success(function (result) {
+            //    if (result == true) {
+            //        alert(result);
+            //        window.location.href = "/Payment/PaymentSuccess";
+            //    } else {
+            //        alert("Select a valid branch")
+            //    }
+            //})
+            //.error(function (xhr, status) {
+            //    alert("Select a valid branch")
+            //})
+            //}
+            
+
+        })
+
+    });
+</script>
+    }

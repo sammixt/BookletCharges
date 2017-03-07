@@ -1,0 +1,81 @@
+﻿@model AutomationOfWithdrawalBookletCharges.ViewModel.CustomerViewModel
+
+<div class="row row-content-section">
+    <div class="col-md-12">
+        <div class="well form-horizontal col-md-8 col-md-offset-2">
+            <fieldset>
+                @using (Html.BeginForm("Proceed", "AccountCheck", FormMethod.Post, new { id = "sendform", role = "form" }))
+                {   
+                    <h3 class="text-center ubn-color">Customers account information</h3>
+                    <div class="col-md-10 col-md-offset-2 form-horizontal">
+                        @Html.AntiForgeryToken()
+                        
+                        <div class="form-group">
+                            <div class="col-md-4 ubn-color"><strong>@Html.DisplayNameFor(model => model.AccountName)</strong></div>
+                            <div class="col-md-8"><strong>@Html.DisplayFor(model => model.AccountName)</strong></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4 ubn-color"><strong>@Html.DisplayNameFor(model => model.AccountNumber)</strong></div>
+                            <div class="col-md-8"><strong>@Html.DisplayFor(model => model.AccountNumber)</strong></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4 ubn-color"><strong>@Html.DisplayNameFor(model => model.AccountBalance)</strong></div>
+                            <div class="col-md-8"><strong>@Html.DisplayFor(model => model.AccountBalance)</strong></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4 ubn-color"><strong>@Html.DisplayNameFor(model => model.PhoneNo)</strong></div>
+                            <div class="col-md-8"><strong>@Html.DisplayFor(model => model.PhoneNo)</strong></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4 ubn-color"><strong>@Html.DisplayNameFor(model => model.DateOfLastIssue)</strong></div>
+                            <div class="col-md-8"><strong>@Html.DisplayFor(model => model.DateOfLastIssue)</strong></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4 ubn-color"><strong>Enter Booklet Serial Number (First Number)</strong></div>
+                            <div class="col-md-4"><input type="text" placeholder="0066001" name="SerialNoStart" class="form-control" required  /></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4 ubn-color"><strong>Enter Booklet Serial Number (Last Number)</strong></div>
+                            <div class="col-md-4"><input type="text" placeholder="0066071" name="SerialNoEnd" class="form-control" required /></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" value="@Html.DisplayFor(model => model.AccountName)" name="AccountName" />
+                            <input type="hidden" value="@Html.DisplayFor(model => model.AccountNumber)" name="AccountNumber" />
+                            <input type="hidden" value="@Html.DisplayFor(model => model.AccountBalance)" name="AccountBalance" />
+                            <input type="hidden" value="@Html.DisplayFor(model => model.PhoneNo)" name="PhoneNo" />
+                            <input type="hidden" value="@DateTime.Now.ToShortDateString()" name="RequestCreationDate" />
+                            <input type="hidden" value="@DateTime.Now.ToShortTimeString()" name="RequestCreationTime"/>
+                        </div>
+                        <div class="form-group">
+                            <a class="btn btn-md ubn-color-bg white-bar col-md-3" href="@Url.Action("Index", "AccountCheck")">Back</a>
+                            <input type="submit" value="Forward to HSSA" placeholder="0066070" class="btn btn-md btn-danger col-md-offset-2 col-md-3" onclick="Disable(this)" />
+                        </div>
+
+                        @if (ViewBag.AddUserErrorMessage != null)
+                        {
+                            <div class="alert alert-danger">
+                                <p><b>@ViewBag.AddUserErrorMessage</b> </p>
+                            </div>
+                        }
+
+                    </div>
+                }
+            </fieldset>
+           
+        </div>
+    </div>
+</div>
+@section Script{
+    <script>
+
+        function Disable(btn) {
+            setTimeout(function () {
+                $(btn).removeClass('btn-danger');
+                $(btn).addClass('ubn-color-bg');
+                $(btn).val("SENDING....");
+            }, 100);
+
+        }
+    </script>
+}
+

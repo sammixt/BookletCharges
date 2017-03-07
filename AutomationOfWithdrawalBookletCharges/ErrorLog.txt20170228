@@ -1,0 +1,24 @@
+DEBUG 2017-02-28 10:03:38,524 - ORA-12154: TNS:could not resolve the connect identifier specified+ -------------------------------- +    at OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   at OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   at OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   at AutomationOfWithdrawalBookletCharges.LIB.ConnectionService.checkStat(String userid) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\LIB\ConnectionService.cs:line 91
+DEBUG 2017-02-28 10:25:26,130 - ORA-12154: TNS:could not resolve the connect identifier specified+ -------------------------------- +    at OracleInternal.ConnectionPool.PoolManager`3.Get(ConnectionString csWithDiffOrNewPwd, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   at OracleInternal.ConnectionPool.OraclePoolManager.Get(ConnectionString csWithNewPassword, Boolean bGetForApp, String affinityInstanceName, Boolean bForceMatch)
+   at OracleInternal.ConnectionPool.OracleConnectionDispenser`3.Get(ConnectionString cs, PM conPM, ConnectionString pmCS, SecureString securedPassword, SecureString securedProxyPassword)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.Open()
+   at AutomationOfWithdrawalBookletCharges.LIB.ConnectionService.checkStat(String userid) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\LIB\ConnectionService.cs:line 91
+DEBUG 2017-02-28 10:38:15,567 - ORA-01403: no data found
+ORA-06512: at "DEVOPS.BKLTMGR", line 42
+ORA-06512: at line 1+ -------------------------------- +    at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at AutomationOfWithdrawalBookletCharges.LIB.ConnectionService.checkStat(String userid) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\LIB\ConnectionService.cs:line 92
+DEBUG 2017-02-28 10:53:30,178 - ORA-01403: no data found
+ORA-06512: at "DEVOPS.BKLTMGR", line 52
+ORA-06512: at line 1+ -------------------------------- +    at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at AutomationOfWithdrawalBookletCharges.Models.CustomerModel.lastIssueDate(String account) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\Models\CustomerModel.cs:line 39

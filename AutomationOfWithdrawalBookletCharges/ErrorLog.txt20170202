@@ -1,0 +1,74 @@
+﻿DEBUG AutomationOfWithdrawalBookletCharges.LIB.ErrorLogs 2017-02-02 08:39:57,605 - login failed
+DEBUG AutomationOfWithdrawalBookletCharges.LIB.ErrorLogs 2017-02-02 08:42:54,089 - login failed
+AutomationOfWithdrawalBookletCharges.LIB.ErrorLogs 2017-02-02 08:45:13,165 - login failed
+DEBUG 2017-02-02 08:47:11,921 - login failed
+DEBUG 2017-02-02 11:17:14,337 - ORA-01403: no data found
+ORA-06512: at "FCUBSLIVE.BKLT_MGR_LAST_ISSUE", line 8
+ORA-06512: at line 1+ -------------------------------- +    at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at AutomationOfWithdrawalBookletCharges.Models.CustomerModel.lastIssueDate(String account) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\Models\CustomerModel.cs:line 39
+DEBUG 2017-02-02 11:18:55,178 - ORA-01403: no data found
+ORA-06512: at "FCUBSLIVE.BKLT_MGR_LAST_ISSUE", line 8
+ORA-06512: at line 1+ -------------------------------- +    at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at AutomationOfWithdrawalBookletCharges.Models.CustomerModel.lastIssueDate(String account) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\Models\CustomerModel.cs:line 39
+DEBUG 2017-02-02 11:57:12,910 - ORA-01403: no data found
+ORA-06512: at "FCUBSLIVE.BKLT_MGR_LAST_ISSUE", line 8
+ORA-06512: at line 1+ -------------------------------- +    at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at AutomationOfWithdrawalBookletCharges.Models.CustomerModel.lastIssueDate(String account) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\Models\CustomerModel.cs:line 39
+DEBUG 2017-02-02 12:03:53,474 - ORA-01403: no data found
+ORA-06512: at "FCUBSLIVE.BKLT_MGR_LAST_ISSUE", line 8
+ORA-06512: at line 1+ -------------------------------- +    at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at AutomationOfWithdrawalBookletCharges.Models.CustomerModel.lastIssueDate(String account) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\Models\CustomerModel.cs:line 39
+DEBUG 2017-02-02 12:06:04,694 - ORA-01403: no data found
+ORA-06512: at "FCUBSLIVE.BKLT_MGR_LAST_ISSUE", line 8
+ORA-06512: at line 1+ -------------------------------- +    at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at AutomationOfWithdrawalBookletCharges.Models.CustomerModel.lastIssueDate(String account) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\Models\CustomerModel.cs:line 39
+DEBUG 2017-02-02 12:09:10,469 - ORA-01403: no data found
+ORA-06512: at "FCUBSLIVE.BKLT_MGR_LAST_ISSUE", line 8
+ORA-06512: at line 1+ -------------------------------- +    at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at AutomationOfWithdrawalBookletCharges.Models.CustomerModel.lastIssueDate(String account) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\Models\CustomerModel.cs:line 39
+DEBUG 2017-02-02 12:10:16,575 - ORA-01403: no data found
+ORA-06512: at "FCUBSLIVE.BKLT_MGR_LAST_ISSUE", line 8
+ORA-06512: at line 1+ -------------------------------- +    at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at AutomationOfWithdrawalBookletCharges.Models.CustomerModel.lastIssueDate(String account) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\Models\CustomerModel.cs:line 39
+DEBUG 2017-02-02 12:13:23,366 - ORA-01403: no data found
+ORA-06512: at "FCUBSLIVE.BKLT_MGR_LAST_ISSUE", line 8
+ORA-06512: at line 1+ -------------------------------- +    at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at AutomationOfWithdrawalBookletCharges.Models.CustomerModel.lastIssueDate(String account) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\Models\CustomerModel.cs:line 39
+DEBUG 2017-02-02 12:38:17,074 - ORA-01403: no data found
+ORA-06512: at "FCUBSLIVE.BKLT_MGR_LAST_ISSUE", line 8
+ORA-06512: at line 1+ -------------------------------- +    at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at AutomationOfWithdrawalBookletCharges.Models.CustomerModel.lastIssueDate(String account) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\Models\CustomerModel.cs:line 39
+DEBUG 2017-02-02 12:40:01,279 - ORA-01403: no data found
+ORA-06512: at "FCUBSLIVE.BKLT_MGR_LAST_ISSUE", line 8
+ORA-06512: at line 1+ -------------------------------- +    at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.VerifyExecution(OracleConnectionImpl connectionImpl, Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, OracleException& exceptionForArrayBindDML, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at AutomationOfWithdrawalBookletCharges.Models.CustomerModel.lastIssueDate(String account) in c:\Users\scezeala\Documents\Visual Studio 2013\Projects\AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges\Models\CustomerModel.cs:line 39

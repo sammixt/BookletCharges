@@ -1,0 +1,60 @@
+﻿@model AutomationOfWithdrawalBookletCharges.ViewModel.RolesViewModel
+@using System.Security.Claims;
+
+@if (Request.IsAuthenticated)
+{
+    var identity = (ClaimsIdentity)User.Identity;
+    var userRole = identity.FindFirst(ClaimTypes.Role).Value;
+
+
+    ViewBag.Title = "Add User";
+
+
+<div class="row row-content-section">
+    <div class="col-md-12">
+        <div class="well form-horizontal col-md-4 col-md-offset-4">
+            <fieldset>
+@using (Html.BeginForm("Createuser", "AdminDetails",FormMethod.Post, new { id = "CreateUser", role = "form" }))
+{
+                <div class="col-md-12 form-horizontal">
+                        @Html.AntiForgeryToken()
+                    <h4 class="text-center ubn-color">Add New User</h4>
+                    <div class="form-group">
+                         @Html.DisplayFor(m =>m.username )
+                        @Html.TextBoxFor(m => m.username, new {@class = "form-control", @placeholder = "Enter your username.", @required = "required"})
+                        @Html.ValidationMessageFor(m => m.username)
+                    </div>
+                    <div class="form-group">
+                        @Html.DropDownListFor(m => m.RoleId, Model.Roles, "Please Select user Role", new { @class = "form-control", @required = "required" })
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-md btn-danger col-md-offset-4 col-md-4" />
+                    </div>
+                    @if (ViewBag.AddUserErrorMessage != null)
+                    {
+                       <div class="alert alert-danger">
+                        <p><b>Creation Failed!</b> @ViewBag.AddUserErrorMessage</p>
+                      </div> 
+                    }
+
+                </div>
+}
+            </fieldset>
+        </div>
+    </div>
+</div>
+    
+@section Script {
+    @if(userRole != "Administrator"){
+    <script>
+        $(document).ready(function () {
+            $("#RoleId option[value='4']").remove();
+        })
+    </script>
+        }
+}
+}
+
+
+

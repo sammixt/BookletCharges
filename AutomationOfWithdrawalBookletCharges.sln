@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationOfWithdrawalBookletCharges", "AutomationOfWithdrawalBookletCharges\AutomationOfWithdrawalBookletCharges.csproj", "{D2A64F72-191D-4BBC-B57D-6BCA22742865}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{B646094B-EB28-49B2-8F0D-83CEF584B379}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\Approved BRS - Savings Withdrawal Charge Automation (2).pdf = Documentation\Approved BRS - Savings Withdrawal Charge Automation (2).pdf
+		Documentation\Automation of withdrawal booklet charges SDS Edited.pdf = Documentation\Automation of withdrawal booklet charges SDS Edited.pdf
+		Documentation\BKLTMGR.sql = Documentation\BKLTMGR.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Published", "Published", "{2E745A90-1067-45CA-9281-C440FE41D0D7}"
+	ProjectSection(SolutionItems) = preProject
+		Published\BM.zip = Published\BM.zip
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://srclib:8080/tfs/application%20development%20(fcubs%20sit)
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AutomationOfWithdrawalBookletCharges\\AutomationOfWithdrawalBookletCharges.csproj
+		SccProjectName1 = AutomationOfWithdrawalBookletCharges
+		SccLocalPath1 = AutomationOfWithdrawalBookletCharges
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2A64F72-191D-4BBC-B57D-6BCA22742865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A64F72-191D-4BBC-B57D-6BCA22742865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A64F72-191D-4BBC-B57D-6BCA22742865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A64F72-191D-4BBC-B57D-6BCA22742865}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

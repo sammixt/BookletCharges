@@ -1,0 +1,137 @@
+﻿@model IEnumerable<AutomationOfWithdrawalBookletCharges.ViewModel.CustomerViewModel>
+
+<div class="well form-inline col-md-12">
+    <fieldset>
+        @using (Html.BeginForm("RequestLog", "AuditLog", FormMethod.Post, new { id = "sendform", role = "form", @class = "col-md-12" }))
+        {
+            <div class="form-group col-md-3">
+                <label class="control-label">Start Date</label>
+                <input type="text" name="SearchStartDate" class="form-control datepicker" required />
+            </div>
+            <div class="form-group col-md-3">
+                <label class="control-label">End Date</label>
+                <input type="text" name="SearchEndDate" class="form-control datepicker" required />
+            </div>
+            <div class="form-group col-md-3">
+                <input type="submit" value="Search" class="btn btn-md ubn-color-bg white-bar" />
+            </div>
+            <div class="clearfix"></div>
+        }
+    </fieldset>
+</div>
+        <table id="example" class="table table-bordered table-responsive">
+            <thead>
+                <tr class="ubn-color-bg white-bar title">
+                    <th>
+                        CUSTOMER NAME
+                    </th>
+                    <th>
+                        ACCOUNT NUMBER
+                    </th>
+                    <th>
+                        SERIAL NUMBER RANGE
+                    </th>
+                    <th>
+                        HSSA ID
+                    </th>
+                    <th>
+                        SSA ID
+                    </th>
+                    <th>
+                        REQUEST DATE
+                    </th>
+                    <th>
+                        AUTORIZATION DATE
+                    </th>
+                    <th>
+                        STATUS
+                    </th>
+                    <th>
+                        Comment
+                    </th>
+                    <th>
+                        View Posting
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AccountName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AccountNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SerialNoStart) - @Html.DisplayFor(modelItem => item.SerialNoEnd)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HssaId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SsaId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RequestCreationDate) @Html.DisplayFor(modelItem => item.RequestCreationTime)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RequestAuthorizationDate) @Html.DisplayFor(modelItem => item.RequestAuthorizationTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Comment)
+                        </td>
+                        <td>
+                           @Html.ActionLink("View Posting Transaction", "PostingLog", new { login_id = item.RequestId }, new { @class = "text-danger" })
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+      
+
+
+<link href="~/DataTable/datatables.min.css" rel="stylesheet" />
+<link href="~/DataTable/Buttons-1.2.4/css/buttons.dataTables.min.css" rel="stylesheet" />
+@section Script{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () { // will trigger when the document is ready
+                $('.datepicker').datepicker(); //Initialise any date pickers
+            });
+        })
+    </script>
+
+    <script src="~/DataTable/datatables.min.js"></script>
+    <script src="~/DataTable/Buttons-1.2.4/js/dataTables.buttons.min.js"></script>
+    <script src="~/DataTable/pdfmake-0.1.18/build/pdfmake.js"></script>
+    <script src="~/DataTable/pdfmake-0.1.18/build/vfs_fonts.js"></script>
+    <script src="~/DataTable/Buttons-1.2.4/js/buttons.html5.min.js"></script>
+    <script src="~/DataTable/Buttons-1.2.4/js/buttons.flash.min.js"></script>
+    <script src="~/DataTable/JSZip-2.5.0/jszip.js"></script>
+    <script src="~/DataTable/Buttons-1.2.4/js/buttons.print.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: ['excel'
+            
+                ]
+            });
+        });
+    </script>
+}
+
+
+
+
+
+
+
